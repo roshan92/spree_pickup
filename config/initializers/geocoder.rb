@@ -11,7 +11,7 @@ Geocoder.configure(
   units: :km,
 
   #api_key
-  key: ENV['GOOGLE_GEOCODE_API_KEY'],
+  key: "AIzaSyDVSeAuBae8ajIlPmcfkI-P8FZGJO8LGgY",
 
   #use_https
   use_https: true

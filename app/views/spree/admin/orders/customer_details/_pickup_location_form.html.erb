@@ -34,7 +34,7 @@
   <%=javascript_include_tag "spree/backend/pickup_locations_getter"%>
   <%=javascript_include_tag "spree/shared/map_initializer"%>
   <%=javascript_include_tag "spree/backend/pickup_list_builder"%>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.secrets.google_map_key%>"
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.credentials.google_map_key%>"
     ></script>
   <%= javascript_tag do %>
     $(function(){

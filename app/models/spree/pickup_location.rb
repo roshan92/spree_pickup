@@ -12,15 +12,15 @@ module Spree
     ##Validations
     validates :name, :address, :start_time, :end_time, presence: true
     validates :timings, presence: { message: 'is required. Please enter open days.' }
-    validates :longitude, :latitude, presence: { message: "can't be blank. Please enter valid address." }
+    # validates :longitude, :latitude, presence: { message: "can't be blank. Please enter valid address." }
     validate :end_time_must_be_greater_than_start_time
     validates_associated :address
 
-    geocoded_by :full_address
+    # geocoded_by :full_address
 
     ##Callbacks
     before_validation :create_timings, if: :open_day_ids_changed?
-    before_validation :update_geocode, if: :geocode_updation_required?
+    # before_validation :update_geocode, if: :geocode_updation_required?
     after_initialize :set_open_day_ids
 
     accepts_nested_attributes_for :address

@@ -3,7 +3,7 @@ module Spree
     module V1
       class PickupLocationsController < Spree::Api::BaseController
 
-        skip_before_action :authenticate_user
+        respond_to :json
 
 
         # def search
@@ -20,7 +20,7 @@ module Spree
             @base_scope = @base_scope.includes(address: [:state, :country])
                       .where(spree_addresses: {state_id: params[:s_id], country_id: params[:c_id]})
           end
-          @base_scope
+          render json: @base_scope
         end
 
       end
